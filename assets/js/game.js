@@ -29,12 +29,10 @@ var fightOrSkip = function() {
             // return true if player wants to leave
             return true;
         }
-
-        else return false
-        // if no (false)
     }
-    shop();
-}
+     return false
+        // if no (false)
+};
 
 // Fight function
 var fight = function(enemy) {
