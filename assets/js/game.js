@@ -36,9 +36,16 @@ var fightOrSkip = function() {
 
 // Fight function
 var fight = function(enemy) {
+    var isPlayerTurn = true;
+    
+    if (Math.random() > 0.5){
+        isPlayerTurn = false;
+    }
     // repeat and execute as long as the enemy-robot is alive
     while(enemy.health > 0 && playerInfo.health > 0) {
     // Prompt fight or skip fight
+    if (isPlayerTurn) {
+
     if (fightOrSkip()) { 
         // if true, leave fight by breaking loop
         break;
@@ -74,8 +81,11 @@ var fight = function(enemy) {
         } else {
             window.alert(playerInfo.name + " still has " + playerInfo.health + " health left.");
         }
-    } 
     }
+    // switch turn order for next round
+    isPlayerTurn = !isPlayerTurn; 
+    }
+}
 ;
 
 var startGame = function() {
